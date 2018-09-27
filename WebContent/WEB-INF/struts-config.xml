@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" 
+"http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+	<form-beans>
+		<form-bean name="Thing" 
+			type="com.test.Thing"/>
+	</form-beans>
+
+	<action-mappings>
+		<action path="/proumi"
+			type="com.test.action.ThingAction"
+			name="thingAction">
+			<forward name="success" path="/zoulin.jsp"/>
+			
+		</action>
+	</action-mappings>
+
+</struts-config>
