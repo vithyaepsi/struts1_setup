@@ -11,6 +11,12 @@
 		<form-bean name="User1" 
 			type="com.test.form.User">
 		</form-bean>
+		<form-bean name="Message" 
+			type="com.test.form.Message">
+		</form-bean>
+		<form-bean name="yesorno" type="org.apache.struts.action.DynaActionForm">
+			<form-property name="yesorno" type="java.lang.String"/>
+		</form-bean>
 
 	</form-beans>
 
@@ -35,6 +41,14 @@
 			<forward name="error" path="/pizdec.jsp" redirect="true"/>
 			
 		</action>
+		
+		<action path="/message"
+			type="com.test.action.MultipleMessageAction"
+			name="yesorno" scope="request" validate="true" parameter="yesorno">
+			<forward name="dispMessage" path="/dispMessage.jsp"/>
+			
+		</action>
+		
 		
 	</action-mappings>
 

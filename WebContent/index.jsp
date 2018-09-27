@@ -7,15 +7,29 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<SCRIPT language="javascript" type="text/javascript">
+	function setYesorno(valeur){
+		document.forms[1].yesorno.value=valeur;
+		alert(valeur);
+	}
+</SCRIPT>
 </head>
 <body>
 	<h1>HI THERE
 	</h1>
 	<div>
-		<html:form action="/login.do" focusIndex="reference">
+		<html:form action="/login.do">
 			<div><label for="login">Votre nom : </label><input id="login" name="login" type="text" /></div>
 			<div><label for="password">Votre mot de passe : </label><input id="password" name="password" type="password" /></div>
 			<html:submit property="submit" value="Envoyer"/>
+		</html:form>
+	</div>
+	<div>
+		<html:form action="/message.do">
+			<html:hidden property="yesorno" value="aucune"/>
+			<h2>Yo, comment tu me trouves ?</h2>
+			<html:submit onclick="setYesorno('insult');">Moche</html:submit>
+			<html:submit onclick="setYesorno('greet');">Cool</html:submit>
 		</html:form>
 	</div>
 </body>
