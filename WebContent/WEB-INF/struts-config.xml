@@ -7,7 +7,11 @@
 
 	<form-beans>
 		<form-bean name="Thing" 
-			type="com.test.Thing"/>
+			type="com.test.form.Thing"/>
+		<form-bean name="User1" 
+			type="com.test.form.User">
+		</form-bean>
+
 	</form-beans>
 
 	<action-mappings>
@@ -15,8 +19,23 @@
 			type="com.test.action.ThingAction"
 			name="thingAction">
 			<forward name="success" path="/zoulin.jsp"/>
+			<forward name="prout" path="/" redirect="true"/>
 			
 		</action>
+		<action path="/proumizoulin"
+			type="com.test.action.ThingAction"
+			name="thingAction">
+			<forward name="success" path="/" redirect="true"/>
+		</action>
+		
+		<action path="/login"
+			type="com.test.action.AskLoginAction"
+			name="User1" scope="request">
+			<forward name="success" path="/logged.jsp"/>
+			<forward name="error" path="/pizdec.jsp" redirect="true"/>
+			
+		</action>
+		
 	</action-mappings>
 
 </struts-config>
