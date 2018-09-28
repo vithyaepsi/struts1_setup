@@ -18,7 +18,17 @@ public class AskLoginAction extends Action {
 		User user = (User) form;
 		//user.setLogin("prout");
 		
-		request.setAttribute("user", user);
-		return mapping.findForward("success");
+		System.out.println(user.getLogin().equals("user"));
+		System.out.println(user.getPassword().equals("password"));
+		
+		if( user.getLogin().equals("user") && user.getPassword().equals("password") ) {
+			request.setAttribute("user", user);
+			return mapping.findForward("success");
+		}
+		else
+		{
+			return mapping.findForward("error");
+		}
+		
 	}
 }

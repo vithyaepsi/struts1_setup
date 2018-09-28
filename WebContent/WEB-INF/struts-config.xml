@@ -39,14 +39,26 @@
 			name="User1" scope="request">
 			<forward name="success" path="/logged.jsp"/>
 			<forward name="error" path="/pizdec.jsp" redirect="true"/>
-			
 		</action>
 		
 		<action path="/message"
 			type="com.test.action.MultipleMessageAction"
 			name="yesorno" scope="request" validate="true" parameter="yesorno">
 			<forward name="dispMessage" path="/dispMessage.jsp"/>
-			
+		</action>
+		
+		<action path="/weather"
+			type="com.test.action.MessageMappingDispatchAction"
+			scope="request"
+			parameter="getLeWeather" >
+			<forward name="dispMessage" path="/dispMessage.jsp"/>
+		</action>
+		
+		<action path="/time"
+			type="com.test.action.MessageMappingDispatchAction"
+			scope="request"
+			parameter="getLeTime" >
+			<forward name="dispMessage" path="/dispMessage.jsp"/>
 		</action>
 		
 		

@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>ERREUR : Je ne vous apprécie pas assez pour vous laisser passer.</h1>
+	<h1>ERREUR : Je ne vous apprécie pas suffisamment pour vous laisser passer.</h1>
 </body>
 </html>
